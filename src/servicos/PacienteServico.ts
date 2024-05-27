@@ -1,4 +1,4 @@
-import { Paciente } from "../Interfaces/Paciente";
+import { Paciente } from "../interfaces/Paciente";
 import api from "./api";
 
 
@@ -14,5 +14,4 @@ export async function cadastrarPaciente(paciente: Paciente){
     console.log(error)
     return null
   }
-
 }
