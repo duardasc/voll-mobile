@@ -71,6 +71,8 @@ export default function Cadastro({ navigation }: any) {
       imagem: dados.imagem
     })
 
+    
+
     if (resultado !== '' && planos.length > 0) {
       toast.show({
         title: 'Cadastro realizado com sucesso',
@@ -80,10 +82,12 @@ export default function Cadastro({ navigation }: any) {
       navigation.replace('Login');
     }
     else {
+      console.log('Erro ao fazer cadastro')
       toast.show({
         title: 'Erro ao cadastrar',
         description: 'Verifique os dados e tente novamente',
         backgroundColor: 'red.500',
+        
       })
     }
   }
