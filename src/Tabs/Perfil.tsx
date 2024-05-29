@@ -26,6 +26,7 @@ export default function Perfil({ navigation } : any){
 
   function deslogar(){
     AsyncStorage.removeItem('token')
+    AsyncStorage.removeItem('PacienteId')
     navigation.replace('Login')
   }
   
