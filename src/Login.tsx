@@ -32,7 +32,7 @@ export default function Login({ navigation } : any) {
     const resultado = await fazerLogin(email, senha)
     if(resultado){
       const { token } = resultado
-      AsyncStorage.setItem('token', token)
+      //AsyncStorage.setItem('token', token)
 
       const tokenDecodificado = jwtDecode(token) as any
       const pacienteId = tokenDecodificado.id

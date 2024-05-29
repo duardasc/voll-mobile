@@ -18,7 +18,6 @@ export default function Perfil({ navigation } : any){
       const resultado = await pegarDadosPaciente(pacienteId)
       if(resultado){
         setDadosPaciente(resultado)
-        console.log(resultado)
       }
     }
     dadosPaciente()
@@ -35,12 +34,12 @@ export default function Perfil({ navigation } : any){
       <VStack flex={1} alignItems="center" p={5}>
         <Titulo color="blue.500">Meu Perfil</Titulo>
 
-        <Avatar size="xl" source={{ uri: dadosPaciente.imagem }} mt={5} />
+        <Avatar size="xl" source={{ uri: dadosPaciente?.imagem }} mt={5} />
 
         <Titulo color="blue.500">Informações pessoais</Titulo>
         <Titulo fontSize="lg" mb={1}>{dadosPaciente.nome}</Titulo>
-        <Text>dadosPaciente.email</Text>
-        <Text>dadosPaciente.endereco.estado</Text>
+        <Text>{dadosPaciente?.email}</Text>
+        <Text>{dadosPaciente?.endereco?.estado}</Text>
 
         <Divider mt={5} />
 
