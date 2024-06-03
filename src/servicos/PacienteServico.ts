@@ -25,3 +25,14 @@ export async function pegarDadosPaciente(id: string){
     console.log(error)
   }
 }
+
+export async function pegarConsultasPaciente(id: string){
+  try{
+    const resultado = await api.get(`/paciente/${id}/consultas`)
+    return resultado.data
+  }catch(error){
+    console.log(error)
+    return null
+  }
+}
+
