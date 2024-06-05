@@ -1,9 +1,10 @@
-import { Input, VStack, useToast } from "native-base";
+import { Box, Input, VStack, useToast } from "native-base";
 import { useState } from "react";
 import { Botao } from "./componentes/Botao";
 import { agendarConsulta } from "./servicos/consultaServico";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import {converterStringParaData} from './utils/conversoes';
+import { converterStringParaData } from './utils/conversoes';
+import Consultas from "./Tabs/Consultas";
 
 export default function Agendamento({ route, navigation }: any) {
     const [data, setData] = useState('')
@@ -31,12 +32,13 @@ export default function Agendamento({ route, navigation }: any) {
 
     return (
         <VStack flex={1} alignItems="center" justifyContent="center" padding={5}>
-            <Input
-                placeholder="Digite a data"
-                onChangeText={setData}
-            />
+                <Input
+                    placeholder="Digite a data"
+                    onChangeText={setData}
+                />
+                <Botao onPress={agendar}>Agendar</Botao>
+                <Botao onPress={() => navigation.navigate('Principal')} >Voltar</Botao>
 
-            <Botao onPress={agendar}>Agendar</Botao>
         </VStack>
     )
 }

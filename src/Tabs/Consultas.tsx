@@ -54,7 +54,7 @@ export default function Consultas({ navigation }: NavigationProps<'Consultas'>) 
         title: 'Consulta cancelada com sucesso',
         backgroundColor: 'green.500'
     }),
-    
+    navigation.navigate('Consultas')
     setRecarregar(!recarregar);
     } else {
       toast.show({
@@ -67,7 +67,7 @@ export default function Consultas({ navigation }: NavigationProps<'Consultas'>) 
   return (
     <ScrollView p="5">
       <Titulo color="blue.500">Minhas consultas</Titulo>
-      <Botao mt={5} mb={5}>Agendar nova consulta</Botao>
+      <Botao mt={5} mb={5} onPress={() => navigation.navigate('Explorar')}>Agendar nova consulta</Botao>
 
       <Titulo color="blue.500" fontSize="lg" alignSelf="flex-start" mb={2}>Próximas consultas</Titulo>
       {consultasProximas?.map((consulta) => (
@@ -88,6 +88,7 @@ export default function Consultas({ navigation }: NavigationProps<'Consultas'>) 
           especialidade={consulta?.especialista?.especialidade}
           foto={consulta?.especialista?.imagem}
           data={consulta?.data}
+          onPress={() => navigation.navigate('Agendamento', { especialistaId: consulta.especialista.id })}
           foiAgendado
           
         />

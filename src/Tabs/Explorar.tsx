@@ -26,11 +26,13 @@ export default function Explorar({ navigation }) {
       console.log(resultado)
     }
   }
-
   return (
     <ScrollView flex={1} bgColor="white">
+      <Botao w={20} marginLeft={5} onPress={() => navigation.navigate('Consultas')} >Voltar</Botao>
+
       <VStack flex={1} alignItems="flex-start" justifyContent="flex-start" p={5}>
         <Box w="100%" borderRadius="lg" p={3} mt={5} shadow="1" borderRightRadius="md">
+
           <EntradaTexto
             placeholder="Digite a especialidade"
             value={especialidade}
@@ -57,6 +59,7 @@ export default function Explorar({ navigation }) {
             />
           </VStack>
         ))}
+
       </VStack>
     </ScrollView>
   )
